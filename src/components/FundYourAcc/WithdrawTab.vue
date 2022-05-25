@@ -37,8 +37,23 @@
             placeholder="Withdraw amount"
             class="rounded"
             background-color="border"
-        ></v-text-field>
+        >
+          <template v-slot:append>
+            <v-btn color="label"
+                   elevation="0"
+                   min-width="47"
+                   width="47"
+                   height="32"
+                   style="text-transform: none; color: white; font-weight: 700;font-size: 12px;line-height: 16px;"
+            >Max</v-btn>
+          </template>
+        </v-text-field>
       </div>
+    </div>
+    <div class="d-flex justify-center mt-5">
+      <v-btn max-width="378" width="100%" height="50" color="primary"
+             style="text-transform: none;font-weight: 700;font-size: 14px;line-height: 19px; color: #FFFFFF;"
+      >Withdraw</v-btn>
     </div>
   </v-card>
 </template>

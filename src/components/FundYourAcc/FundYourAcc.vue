@@ -1,6 +1,5 @@
 <template>
-  <v-container class="d-flex align-center justify-center" style="height: 100%">
-    <v-card width="780px" height="587px" style="border-radius: 5px;padding: 30px">
+    <v-card width="780px" style="border-radius: 5px;padding: 30px 30px 71px 30px" >
       <v-card-title class="pa-0">
         <v-row class="ma-0">
           <v-col class="pa-0" cols="11">
@@ -23,7 +22,7 @@
         </v-row>
       </v-card-title>
 
-      <v-card-text class="pt-10">
+      <v-card-text class="pt-10 pb-0">
           <v-tabs-items v-model="tab">
             <v-tab-item :value="'deposit'">
               <DepositTab v-model="deposit" />
@@ -31,20 +30,23 @@
             <v-tab-item :value="'withdraw'">
               <WithdrawTab v-model="withdraw"/>
             </v-tab-item>
-            <v-tab-item :value="'rebalance'">3333</v-tab-item>
+            <v-tab-item :value="'rebalance'">
+              <RebalanceTab v-model="rebalance"/>
+            </v-tab-item>
           </v-tabs-items>
       </v-card-text>
     </v-card>
-  </v-container>
+
 </template>
 
 <script>
 
 import DepositTab from "@/components/FundYourAcc/DepositTab";
 import WithdrawTab from "@/components/FundYourAcc/WithdrawTab";
+import RebalanceTab from "@/components/FundYourAcc/RebalanceTab";
 export default {
   name: "FundYourAcc",
-  components: {WithdrawTab, DepositTab},
+  components: {RebalanceTab, WithdrawTab, DepositTab},
   data: () => ({
     tab: null,
     deposit:{
@@ -68,10 +70,19 @@ export default {
         'Vue',
         'Vuetify',
       ],
-      qrcode: require('../../assets/qrcode.png'),
-      text: 'FGBfvcnkfdnvkk74365832ybvcvdfvfvb'
     },
-
+    rebalance:{
+      balance: '0.04763864',
+      select1: [],
+      select2: [],
+      select3: [],
+      items: [
+        'Programming',
+        'Design',
+        'Vue',
+        'Vuetify',
+      ],
+    },
   }),
   methods: {
     isTab(item){
@@ -104,5 +115,9 @@ export default {
   font-size: 20px;
   line-height: 27px;
 }
-
+@media (max-width: 484px) {
+  .vtab{
+    margin-right: 10px;
+  }
+}
 </style>

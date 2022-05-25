@@ -30,19 +30,19 @@
       </div>
     </div>
 
-    <div class="d-flex justify-center mt-9">
+    <div class="d-flex justify-center" style="margin-top: 37px">
       <v-img  max-height="119"
               max-width="112"
               :src="deposit.qrcode"></v-img>
     </div>
 
-    <div class="d-flex justify-center code-text">
+    <div class="d-flex justify-center code-text" style="margin-top: 27px">
       {{deposit.text}}
     </div>
     <div class="d-flex justify-center mt-7">
-      <v-btn max-width="378" width="100%" height="50" color="primary" style="text-transform: none">
-        Copy
-      </v-btn>
+      <v-btn max-width="378" width="100%" height="50" color="primary"
+             style="text-transform: none;font-weight: 700;font-size: 14px;line-height: 19px; color: #FFFFFF;"
+      >Copy</v-btn>
     </div>
   </v-card>
 </template>
